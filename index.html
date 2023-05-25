@@ -5,13 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아일랜드</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+    <script>
+        alert('본 웹 사이트는 배포가 불가능합니다.')
+        alert('본 웹 사이트의 영상 혹은 그 외의 것을 무단으로 복제할시 관련 법령에 따라 처벌 받을수 있습니다.')
+    </script>
 </head>
 <body>
-    <video controls>
-        <source src="island.mp4" type="video/mp4">
-        해당 브라우저에서 비디오 재생을 지원하지 않습니다.
-      </video>
+    <div id="videoContainer">
+        <video id="videoElement" poster="island.jpg" oncontextmenu="return false;" controlsList="nodownload" preload="true" weight="1280" height="534"muted controls>
+            <source src="https://rr3---sn-ogul7nez.c.drive.google.com/videoplayback?expire=1685023321&ei=GTJvZPfTJZP--LYP1ped2Aw&ip=27.35.16.156&cp=QVRNV0FfUlNQQlhPOmNqM05UNkE1b2JhNlBGSjFTdWZFV3hTZGpodGNZTHZuVjhNNkJuRFlkYm0&id=f04fa9967bd4d0e0&itag=22&source=webdrive&requiressl=yes&mh=95&mm=32&mn=sn-ogul7nez&ms=su&mv=u&mvi=3&pl=23&ttl=transient&susc=dr&driveid=1kWKSYXz4O7wtxzBw-sIlC9HQQZPrEK4F&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=8160.002&lmt=1684968627858602&mt=1685008603&subapp=DRIVE_WEB_FILE_VIEWER&txp=0011224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRQIgMnY_ZsswA3Nl4aQRr2jy1vdBfis1LIYHovnQ7VUgSMICIQCSUrdfYruaQRRR-Agg_12cBX_ZgSfknFmdrHNO6Zl3_w==&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAMC341fdJe0Mstgtox_2ghNF0dEXYcQ7iH4_34KjxC2pAiEAtj62KJQkIo2d5a-WipAHhKyraDUouM-TOkFaDiRW6QE=&cpn=fXV5jzMhWNdZyUgh&c=WEB_EMBEDDED_PLAYER&cver=1.20230521.00.00" type="video/mp4">
+            해당 브라우저에서 비디오 재생을 지원하지 않습니다. 크롬브라우저로 접속 바랍니다.
+        </video>
+    </div>
+    <h1>영상 재생은 Chrome 웹 브라우저에 최적화 되어 있습니다.</h1>
+    <h2>영상 로딩까지 인터넷 상황에 따라 최대 5분까지 걸릴수 있습니다. 일반적으론 1분이내로 로딩됩니다.</h2>
     <h1>해당 웹 사이트는 교육의 목적으로 만들었습니다.</h1>
     <h3>해당 웹 사이트는 저작권 법을 준수합니다.</h3>
+    <h3>해당 웹 사이트는 5월 29일 23시59분59초에 폐지될 예정입니다.</h3>
+    <h3>본 웹 사이트는 배포가 불가능합니다.</h3>
+    <h3>본 웹 사이트의 영상 혹은 그 외의 것을 무단으로 복제할시 관련 법령에 따라 처벌 받을수 있습니다.</h3>
+    <h4>해당 사이트의 데이터량은 약 1.8GB입니다.</h4>
+    <h5>웹 사이트의 문제는 카톡으로 연락바랍니다.</h5>
+
+    <script language="JavaScript">
+        const startVideo = async () => {
+        const video = document.querySelector('#videoContainer');
+
+        try {
+            await video.play();
+
+            video.setAttribute('autoplay', true);
+
+            console.log('video started playing successfully');
+        } catch (err) {
+            console.log(err, 'video play error');
+            // do stuff in case your video is unavailable to play/autoplay
+        }
+        }
+
+        setTimeout(startVideo, 5000)
+      
+        window.onload = function () {
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+            document.addEventListener("keydown", function (e) {
+                //document.onkeydown = function(e) {
+                // "I" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                    disabledEvent(e);
+                }
+                // "J" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                    disabledEvent(e);
+                }
+                // "S" key + macOS
+                if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    disabledEvent(e);
+                }
+                // "U" key
+                if (e.ctrlKey && e.keyCode == 85) {
+                    disabledEvent(e);
+                }
+                // "F12" key
+                if (event.keyCode == 123) {
+                    disabledEvent(e);
+                }
+            }, false);
+            function disabledEvent(e) {
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                } else if (window.event) {
+                    window.event.cancelBubble = true;
+                }
+                e.preventDefault();
+                return false;
+            }
+        }
+ //edit: removed ";" from last "}" because of javascript error
+    </script>
 </body>
 </html>
